@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: locafacile
+    runtime: php
+    repo: https://github.com/DevJunior242/locafacile.bf
+    branch: main
+    buildCommand: |
+      composer install --no-dev
+      php artisan migrate --force
+      php artisan config:cache
+    startCommand: php artisan serve --host=0.0.0.0 --port=10000
+    envVars:
+      - key: APP_KEY
+        value: TON_APP_KEY_ICI
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
