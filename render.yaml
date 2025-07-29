@@ -5,14 +5,26 @@ services:
     repo: https://github.com/DevJunior242/locafacile.bf
     branch: main
     buildCommand: |
-      composer install --no-dev
+      composer install --no-dev --optimize-autoloader
       php artisan migrate --force
       php artisan config:cache
     startCommand: php artisan serve --host=0.0.0.0 --port=10000
     envVars:
       - key: APP_KEY
-        value: TON_APP_KEY_ICI
+        value: base64:Z+JskPogVm4P7L4ydWQK5hZ4rT6yoiXrQo48nMElZXs=
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: false
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: 127.0.0.1
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        value: locafacile
+      - key: DB_USERNAME
+        value: root
+      - key: DB_PASSWORD
+        value: MasterClass7
