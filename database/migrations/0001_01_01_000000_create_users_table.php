@@ -17,11 +17,11 @@ return new class extends Migration
 
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
-            $table->text('email')->unique();
+            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->text('phone')->unique()->nullable();
-            $table->text('google_id')->nullable();
+            $table->string('phone')->unique()->nullable();
+            $table->string('google_id')->nullable();
             $table->timestamp('banned_at')->nullable();
 
 
